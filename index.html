@@ -9,271 +9,78 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, 'Segoe UI', Roboto, sans-serif; }
         body { background: #f0f2f5; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 20px; }
         .container { max-width: 420px; width: 100%; background: white; border-radius: 20px; padding: 25px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
-        
         .header { text-align: center; margin-bottom: 20px; }
         .header h1 { color: #1a1a2e; font-size: 22px; }
         .header p { color: #666; font-size: 13px; margin-top: 4px; }
-        
-        /* Connection Status Bar */
-        .connection-bar {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 10px 15px;
-            border-radius: 10px;
-            margin-bottom: 15px;
-            font-size: 13px;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
+        .connection-bar { display: flex; align-items: center; justify-content: space-between; padding: 10px 15px; border-radius: 10px; margin-bottom: 15px; font-size: 13px; font-weight: 600; }
         .connection-bar.online { background: #d4edda; color: #155724; }
         .connection-bar.offline { background: #fff3cd; color: #856404; }
-        .connection-bar .badge {
-            background: white;
-            padding: 3px 10px;
-            border-radius: 12px;
-            font-size: 11px;
-        }
-        
-        /* Scanner */
-        .scanner-box { 
-            background: #1a1a2e; 
-            border-radius: 16px; 
-            padding: 15px; 
-            text-align: center;
-            margin-bottom: 15px;
-            position: relative;
-            min-height: 220px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-        .scanner-box video { 
-            width: 100%; 
-            max-height: 280px; 
-            border-radius: 8px; 
-            background: #000;
-            object-fit: cover;
-        }
-        .scanner-box .overlay {
-            position: absolute;
-            color: white;
-            font-size: 13px;
-            opacity: 0.7;
-            text-align: center;
-            pointer-events: none;
-        }
+        .connection-bar .badge { background: white; padding: 3px 10px; border-radius: 12px; font-size: 11px; }
+        .scanner-box { background: #1a1a2e; border-radius: 16px; padding: 15px; text-align: center; margin-bottom: 15px; position: relative; min-height: 220px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+        .scanner-box video { width: 100%; max-height: 280px; border-radius: 8px; background: #000; object-fit: cover; }
+        .scanner-box .overlay { position: absolute; color: white; font-size: 13px; opacity: 0.7; text-align: center; pointer-events: none; }
         .scanner-box .overlay .icon { font-size: 40px; display: block; margin-bottom: 8px; }
-        
-        /* Status Card */
-        .status-card { 
-            background: #f8f9fa; 
-            border-radius: 14px; 
-            padding: 20px; 
-            text-align: center; 
-            margin-bottom: 15px;
-            border: 2px solid #e9ecef;
-            transition: all 0.3s;
-        }
+        .status-card { background: #f8f9fa; border-radius: 14px; padding: 20px; text-align: center; margin-bottom: 15px; border: 2px solid #e9ecef; }
         .status-card.success { border-color: #4CAF50; background: #e8f5e9; }
         .status-card.error { border-color: #f44336; background: #ffebee; }
         .status-card.warning { border-color: #ff9800; background: #fff3e0; }
         .status-card.info { border-color: #2196F3; background: #e3f2fd; }
-        
         .status-emoji { font-size: 40px; display: block; }
         .status-text { font-size: 18px; font-weight: 700; color: #1a1a2e; margin: 8px 0; }
         .status-sub { font-size: 13px; color: #666; }
-        
-        /* Buttons */
-        .btn { 
-            width: 100%; 
-            padding: 14px; 
-            border: none; 
-            border-radius: 12px; 
-            font-size: 15px; 
-            font-weight: 600; 
-            cursor: pointer; 
-            margin: 6px 0;
-            transition: all 0.2s;
-        }
+        .btn { width: 100%; padding: 14px; border: none; border-radius: 12px; font-size: 15px; font-weight: 600; cursor: pointer; margin: 6px 0; }
         .btn:active { transform: scale(0.97); }
         .btn-primary { background: #6c63ff; color: white; }
         .btn-success { background: #4CAF50; color: white; }
         .btn-danger { background: #f44336; color: white; }
         .btn-secondary { background: #6c757d; color: white; }
         .btn-warning { background: #ff9800; color: white; }
-        .btn:disabled { background: #ccc; cursor: not-allowed; }
-        
-        /* Login */
-        .login-section {
-            background: #f8f9fa;
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 20px;
-        }
+        .login-section { background: #f8f9fa; border-radius: 12px; padding: 20px; margin-bottom: 20px; }
         .login-section label { font-weight: 600; font-size: 14px; color: #333; display: block; margin-top: 10px; }
-        .login-section input {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            font-size: 16px;
-            margin-top: 5px;
-        }
+        .login-section input { width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 8px; font-size: 16px; margin-top: 5px; }
         .login-section input:focus { outline: none; border-color: #6c63ff; }
-        
-        /* Info Card */
-        .info-card { 
-            background: #e8f4fd; 
-            border-radius: 12px; 
-            padding: 15px; 
-            margin: 15px 0;
-            display: none;
-        }
+        .info-card { background: #e8f4fd; border-radius: 12px; padding: 15px; margin: 15px 0; display: none; }
         .info-card .label { font-size: 11px; color: #666; text-transform: uppercase; font-weight: 600; }
         .info-card .value { font-size: 16px; font-weight: 600; color: #1a1a2e; margin-top: 2px; }
-        
-        /* Verification Indicators */
-        .verification-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 8px;
-            margin: 15px 0;
-            display: none;
-        }
-        .verification-item {
-            background: #f8f9fa;
-            border-radius: 10px;
-            padding: 10px;
-            text-align: center;
-            font-size: 11px;
-        }
-        .verification-item .icon { font-size: 20px; display: block; margin-bottom: 4px; }
-        .verification-item.pass { background: #d4edda; }
-        .verification-item.fail { background: #f8d7da; }
-        .verification-item.pending { background: #fff3cd; }
-        
-        /* Pending List */
-        .pending-list {
-            background: #fff3cd;
-            border-radius: 12px;
-            padding: 15px;
-            margin: 15px 0;
-            display: none;
-        }
-        .pending-list h3 { font-size: 14px; color: #856404; margin-bottom: 10px; }
-        .pending-item {
-            font-size: 12px;
-            padding: 6px 0;
-            border-bottom: 1px solid #ffe69c;
-            display: flex;
-            justify-content: space-between;
-        }
-        .pending-item:last-child { border-bottom: none; }
-        
-        /* History */
         .history { margin-top: 15px; border-top: 1px solid #eee; padding-top: 15px; display: none; }
         .history h3 { font-size: 13px; color: #666; margin-bottom: 8px; }
         .history-item { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #f5f5f5; font-size: 13px; }
         .history-item .time { color: #999; font-size: 11px; }
-        
-        /* Toast */
-        .toast { 
-            position: fixed; 
-            bottom: 30px; 
-            left: 50%; 
-            transform: translateX(-50%); 
-            background: #333; 
-            color: white; 
-            padding: 12px 24px; 
-            border-radius: 12px; 
-            display: none; 
-            z-index: 999;
-            max-width: 90%;
-            text-align: center;
-            font-size: 14px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-        }
+        .toast { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); background: #333; color: white; padding: 12px 24px; border-radius: 12px; display: none; z-index: 999; max-width: 90%; text-align: center; font-size: 14px; }
         .toast.show { display: block; animation: slideUp 0.3s ease; }
         @keyframes slideUp { from { transform: translate(-50%, 100px); opacity: 0; } to { transform: translate(-50%, 0); opacity: 1; } }
-        
-        /* Badges */
-        .badge {
-            display: inline-block;
-            padding: 3px 10px;
-            border-radius: 20px;
-            font-size: 11px;
-            font-weight: 600;
-        }
+        .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: 600; }
         .badge-success { background: #d4edda; color: #155724; }
-        .badge-danger { background: #f8d7da; color: #721c24; }
         .badge-warning { background: #fff3cd; color: #856404; }
         .badge-info { background: #d1ecf1; color: #0c5460; }
-        
-        /* Quick Actions */
-        .quick-actions {
-            display: flex;
-            gap: 8px;
-            margin: 10px 0;
-        }
-        .quick-actions button {
-            flex: 1;
-            padding: 10px;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            background: white;
-            cursor: pointer;
-            font-weight: 600;
-            font-size: 12px;
-            transition: all 0.2s;
-        }
-        .quick-actions button:active { transform: scale(0.95); }
+        .quick-actions { display: flex; gap: 8px; margin: 10px 0; }
+        .quick-actions button { flex: 1; padding: 10px; border: 2px solid #ddd; border-radius: 8px; background: white; cursor: pointer; font-weight: 600; font-size: 12px; }
         .quick-actions button.active { border-color: #6c63ff; background: #f0edff; color: #6c63ff; }
-        
         .manual-entry { display: none; margin: 10px 0; }
         .manual-entry.show { display: block; }
-        
-        .loading {
-            display: none;
-            text-align: center;
-            padding: 20px;
-        }
+        .loading { display: none; text-align: center; padding: 20px; }
         .loading.show { display: block; }
-        .spinner {
-            border: 4px solid #f3f3f3;
-            border-top: 4px solid #6c63ff;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            animation: spin 1s linear infinite;
-            margin: 0 auto;
-        }
+        .spinner { border: 4px solid #f3f3f3; border-top: 4px solid #6c63ff; border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; margin: 0 auto; }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <!-- Header -->
     <div class="header">
         <h1>🏫 Smart QR Attendance</h1>
-        <p>Offline-capable • Anti-fraud • One QR for all</p>
+        <p>Offline-capable • One QR for all</p>
     </div>
 
-    <!-- Connection Status -->
     <div class="connection-bar online" id="connectionBar">
         <span id="connectionText">🟢 Online</span>
-        <span class="badge" id="pendingBadge" style="display:none;">0 pending</span>
     </div>
 
-    <!-- Loading -->
     <div class="loading" id="loading">
         <div class="spinner"></div>
         <p style="margin-top:10px;color:#666;font-size:13px;" id="loadingText">Verifying...</p>
     </div>
 
-    <!-- Login Section -->
     <div class="login-section" id="loginSection">
         <h3 style="margin-bottom:15px;">🔐 Login (First time only)</h3>
         <label>Teacher ID</label>
@@ -284,9 +91,7 @@
         <p style="font-size:11px;color:#999;margin-top:10px;">⚠️ First login requires internet. After that, works fully offline.</p>
     </div>
 
-    <!-- Main App -->
     <div id="mainApp" style="display:none;">
-        <!-- Quick Actions -->
         <div class="quick-actions">
             <button id="scanBtn" class="active" onclick="toggleScanner(true)">📷 Scan</button>
             <button onclick="toggleManual()">⌨️ Manual</button>
@@ -294,7 +99,6 @@
             <button onclick="logout()">🚪 Logout</button>
         </div>
 
-        <!-- Scanner -->
         <div class="scanner-box" id="scannerBox">
             <video id="video" autoplay playsinline muted></video>
             <div class="overlay" id="scannerOverlay">
@@ -303,35 +107,16 @@
             </div>
         </div>
 
-        <!-- Manual Entry -->
         <div class="manual-entry" id="manualEntry">
             <button class="btn btn-success" onclick="simulateScan()">📷 Simulate Scan</button>
         </div>
 
-        <!-- Status Card -->
         <div class="status-card" id="statusCard">
             <span class="status-emoji" id="statusEmoji">👋</span>
             <div class="status-text" id="statusText">Ready</div>
             <div class="status-sub" id="statusSub">Scan QR to check in/out</div>
         </div>
 
-        <!-- Verification Indicators -->
-        <div class="verification-grid" id="verificationGrid">
-            <div class="verification-item pending" id="verifyWifi">
-                <span class="icon">📶</span>
-                <div>WiFi</div>
-            </div>
-            <div class="verification-item pending" id="verifyGps">
-                <span class="icon">📍</span>
-                <div>GPS</div>
-            </div>
-            <div class="verification-item pending" id="verifyDevice">
-                <span class="icon">📱</span>
-                <div>Device</div>
-            </div>
-        </div>
-
-        <!-- Teacher Info -->
         <div class="info-card" id="infoCard">
             <div class="label">👤 Teacher</div>
             <div class="value" id="teacherName">—</div>
@@ -341,14 +126,6 @@
             <div class="value" id="teacherStatus"><span class="badge badge-warning">Not checked in</span></div>
         </div>
 
-        <!-- Pending Scans -->
-        <div class="pending-list" id="pendingList">
-            <h3>⏳ Pending Scans (waiting for internet)</h3>
-            <div id="pendingItems"></div>
-            <button class="btn btn-warning" onclick="manualSync()" style="margin-top:10px;">🔄 Sync Now</button>
-        </div>
-
-        <!-- History -->
         <div class="history" id="historySection">
             <h3>📜 Today's Activity</h3>
             <div id="historyList"></div>
@@ -358,38 +135,16 @@
 
 <div class="toast" id="toast"></div>
 
-<!-- QR Scanner Library -->
 <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"></script>
 
 <script>
 // ============================================================
-// CONFIGURATION - CHANGE THESE VALUES
+// CONFIGURATION
 // ============================================================
 const CONFIG = {
-    API_URL: 'https://script.google.com/macros/s/AKfycbzNBBL1IIm46POAtR8lDTDziUX-XrjpfnjAB6kSFFypwtVUKxRVwqc4skunQZzCLacM/exec',  // ← Your Google Apps Script URL
-    
-    // School coordinates (get from Google Maps)
-    SCHOOL_LAT: 5.9631234,   // ← Replace with YOUR school latitude
-    SCHOOL_LNG: 10.1591234,  // ← Replace with YOUR school longitude
-    MAX_DISTANCE_METERS: 200, // Allow 200m radius
-    
-    // School WiFi names (for native app)
-    SCHOOL_WIFI: [
-        'School_WiFi_5G',
-        'School_WiFi_2.4G',
-        'Staff_WiFi',
-        'School_Guest'
-    ],
-    
-    // Grace periods (minutes)
-    LATE_GRACE: 10,
-    EARLY_GRACE: 5,
-    
-    // Storage keys
+    API_URL: 'https://script.google.com/macros/s/AKfycbzNBBL1IIm46POAtR8lDTDziUX-XrjpfnjAB6kSFFypwtVUKxRVwqc4skunQZzCLacM/exec',
     STORAGE_KEY: 'attendance_data_v2',
-    LOGIN_KEY: 'saved_login_v2',
-    DEVICE_KEY: 'device_id_v1',
-    REVIEW_KEY: 'review_queue_v1'
+    LOGIN_KEY: 'saved_login_v2'
 };
 
 // ============================================================
@@ -401,68 +156,8 @@ let state = {
     teacherDept: null,
     isScanning: false,
     history: [],
-    pendingScans: [],
-    reviewQueue: [],
-    lastVerification: null,
     lastScanTime: null
 };
-
-// ============================================================
-// DEVICE ID (for device binding)
-// ============================================================
-function getDeviceId() {
-    let deviceId = localStorage.getItem(CONFIG.DEVICE_KEY);
-    if (!deviceId) {
-        const fingerprint = [
-            screen.width,
-            screen.height,
-            navigator.userAgent,
-            new Date().getTimezoneOffset(),
-            navigator.language,
-            navigator.platform,
-            Math.random().toString(36).substring(2)
-        ].join('|');
-        
-        let hash = 0;
-        for (let i = 0; i < fingerprint.length; i++) {
-            hash = ((hash << 5) - hash) + fingerprint.charCodeAt(i);
-            hash = hash & hash;
-        }
-        deviceId = 'DEV-' + Math.abs(hash).toString(36).toUpperCase();
-        localStorage.setItem(CONFIG.DEVICE_KEY, deviceId);
-    }
-    return deviceId;
-}
-
-// ============================================================
-// CONNECTION STATUS
-// ============================================================
-function updateConnectionStatus() {
-    const bar = document.getElementById('connectionBar');
-    const text = document.getElementById('connectionText');
-    const badge = document.getElementById('pendingBadge');
-    
-    if (navigator.onLine) {
-        bar.className = 'connection-bar online';
-        text.textContent = '🟢 Online';
-        if (state.pendingScans.length > 0) {
-            setTimeout(syncPending, 2000);
-        }
-    } else {
-        bar.className = 'connection-bar offline';
-        text.textContent = '🟡 Offline — Scans will sync later';
-    }
-    
-    if (state.pendingScans.length > 0) {
-        badge.style.display = 'inline-block';
-        badge.textContent = `${state.pendingScans.length} pending`;
-    } else {
-        badge.style.display = 'none';
-    }
-}
-
-window.addEventListener('online', updateConnectionStatus);
-window.addEventListener('offline', updateConnectionStatus);
 
 // ============================================================
 // TOAST
@@ -474,8 +169,8 @@ function showToast(message, duration = 3000) {
     setTimeout(() => toast.classList.remove('show'), duration);
 }
 
-function showLoading(text = 'Verifying...') {
-    document.getElementById('loadingText').textContent = text;
+function showLoading(text) {
+    document.getElementById('loadingText').textContent = text || 'Loading...';
     document.getElementById('loading').classList.add('show');
 }
 
@@ -487,15 +182,12 @@ function hideLoading() {
 // STORAGE
 // ============================================================
 function saveToStorage() {
-    const data = {
+    localStorage.setItem(CONFIG.STORAGE_KEY, JSON.stringify({
         teacherId: state.teacherId,
         teacherName: state.teacherName,
         teacherDept: state.teacherDept,
-        history: state.history,
-        pendingScans: state.pendingScans,
-        reviewQueue: state.reviewQueue
-    };
-    localStorage.setItem(CONFIG.STORAGE_KEY, JSON.stringify(data));
+        history: state.history
+    }));
 }
 
 function loadFromStorage() {
@@ -507,206 +199,7 @@ function loadFromStorage() {
             state.teacherName = data.teacherName || null;
             state.teacherDept = data.teacherDept || null;
             state.history = data.history || [];
-            state.pendingScans = data.pendingScans || [];
-            state.reviewQueue = data.reviewQueue || [];
-        } catch (e) {
-            console.error('Storage load error:', e);
-        }
-    }
-}
-
-// ============================================================
-// GPS LOCATION
-// ============================================================
-function getGPSLocation() {
-    return new Promise((resolve, reject) => {
-        if (!navigator.geolocation) {
-            reject('GPS not supported');
-            return;
-        }
-        
-        navigator.geolocation.getCurrentPosition(
-            (position) => {
-                resolve({
-                    lat: position.coords.latitude,
-                    lng: position.coords.longitude,
-                    accuracy: position.coords.accuracy,
-                    timestamp: position.timestamp
-                });
-            },
-            (error) => {
-                let msg = 'GPS error';
-                if (error.code === 1) msg = 'GPS permission denied';
-                else if (error.code === 2) msg = 'GPS position unavailable';
-                else if (error.code === 3) msg = 'GPS timeout';
-                reject(msg);
-            },
-            {
-                enableHighAccuracy: true,
-                timeout: 8000,
-                maximumAge: 60000
-            }
-        );
-    });
-}
-
-function calculateDistance(lat1, lon1, lat2, lon2) {
-    const R = 6371e3;
-    const φ1 = lat1 * Math.PI / 180;
-    const φ2 = lat2 * Math.PI / 180;
-    const Δφ = (lat2 - lat1) * Math.PI / 180;
-    const Δλ = (lon2 - lon1) * Math.PI / 180;
-    
-    const a = Math.sin(Δφ/2) * Math.sin(Δφ/2) +
-              Math.cos(φ1) * Math.cos(φ2) *
-              Math.sin(Δλ/2) * Math.sin(Δλ/2);
-    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-    
-    return R * c;
-}
-
-// ============================================================
-// WIFI CHECK
-// ============================================================
-async function checkWiFi() {
-    // Native app (Capacitor)
-    if (window.Capacitor && window.Capacitor.Plugins) {
-        try {
-            const { WifiManager } = window.Capacitor.Plugins;
-            if (WifiManager) {
-                const ssid = await WifiManager.getCurrentWifiSSID();
-                const isSchool = CONFIG.SCHOOL_WIFI.includes(ssid);
-                return {
-                    available: true,
-                    connected: true,
-                    ssid: ssid,
-                    isSchool: isSchool,
-                    method: 'native'
-                };
-            }
-        } catch (e) {
-            // WiFi Manager failed
-        }
-    }
-    
-    // Browser - limited info
-    if (navigator.connection) {
-        const type = navigator.connection.type;
-        const isWifi = type === 'wifi' || navigator.connection.effectiveType?.includes('wifi');
-        
-        // In browser we can't get SSID, so we can only guess
-        return {
-            available: true,
-            connected: isWifi,
-            ssid: isWifi ? 'WiFi (SSID hidden in browser)' : null,
-            isSchool: false, // Can't verify in browser
-            method: 'browser',
-            limited: true
-        };
-    }
-    
-    return {
-        available: false,
-        connected: false,
-        isSchool: false
-    };
-}
-
-// ============================================================
-// VERIFICATION ENGINE
-// ============================================================
-async function verifyPresence() {
-    const result = {
-        verified: false,
-        method: null,
-        wifi: null,
-        gps: null,
-        device: null,
-        reasons: [],
-        warnings: []
-    };
-    
-    // Device ID
-    result.device = getDeviceId();
-    
-    // === Layer 1: WiFi Check ===
-    try {
-        const wifi = await checkWiFi();
-        result.wifi = wifi;
-        
-        if (wifi.available && wifi.isSchool) {
-            result.verified = true;
-            result.method = 'wifi';
-        }
-    } catch (e) {
-        result.warnings.push('WiFi check failed: ' + e);
-    }
-    
-    // === Layer 2: GPS Check ===
-    try {
-        const gps = await getGPSLocation();
-        result.gps = gps;
-        
-        const distance = calculateDistance(
-            gps.lat, gps.lng,
-            CONFIG.SCHOOL_LAT, CONFIG.SCHOOL_LNG
-        );
-        result.distance = Math.round(distance);
-        
-        if (distance <= CONFIG.MAX_DISTANCE_METERS) {
-            result.verified = true;
-            if (!result.method) result.method = 'gps';
-        } else {
-            result.reasons.push(`GPS shows ${Math.round(distance)}m from school`);
-        }
-    } catch (e) {
-        result.warnings.push('GPS unavailable: ' + e);
-    }
-    
-    // === Decision ===
-    if (result.verified) {
-        return result;
-    }
-    
-    // Not verified by WiFi or GPS
-    if (!result.wifi?.available && !result.gps) {
-        result.reasons.push('No verification method available');
-    }
-    
-    return result;
-}
-
-// ============================================================
-// UPDATE VERIFICATION UI
-// ============================================================
-function updateVerificationUI(verification) {
-    const grid = document.getElementById('verificationGrid');
-    grid.style.display = 'grid';
-    
-    // WiFi
-    const wifiEl = document.getElementById('verifyWifi');
-    if (verification.wifi?.isSchool) {
-        wifiEl.className = 'verification-item pass';
-    } else if (verification.wifi?.available) {
-        wifiEl.className = 'verification-item fail';
-    } else {
-        wifiEl.className = 'verification-item pending';
-    }
-    
-    // GPS
-    const gpsEl = document.getElementById('verifyGps');
-    if (verification.gps && verification.distance <= CONFIG.MAX_DISTANCE_METERS) {
-        gpsEl.className = 'verification-item pass';
-    } else if (verification.gps) {
-        gpsEl.className = 'verification-item fail';
-    } else {
-        gpsEl.className = 'verification-item pending';
-    }
-    
-    // Device
-    const deviceEl = document.getElementById('verifyDevice');
-    if (verification.device) {
-        deviceEl.className = 'verification-item pass';
+        } catch (e) {}
     }
 }
 
@@ -722,34 +215,11 @@ async function login() {
         return;
     }
     
-    if (pin !== '1234') {
-        showToast('❌ Invalid PIN');
-        return;
-    }
-    
-    // Check offline first
-    if (!navigator.onLine) {
-        const saved = JSON.parse(localStorage.getItem(CONFIG.LOGIN_KEY) || '{}');
-        if (saved.teacherId === parseInt(id)) {
-            state.teacherId = saved.teacherId;
-            state.teacherName = saved.name;
-            state.teacherDept = saved.department;
-            showMainApp();
-            showToast('✅ Logged in (offline mode)');
-            return;
-        } else {
-            showToast('❌ First login requires internet');
-            return;
-        }
-    }
-    
-    // Online login
     showLoading('Logging in...');
     state.teacherId = parseInt(id);
-    const deviceId = getDeviceId();
     
     try {
-        const url = `${CONFIG.API_URL}?action=login&teacherId=${id}&pin=${pin}&deviceId=${deviceId}`;
+        const url = CONFIG.API_URL + '?action=login&teacherId=' + id + '&pin=' + pin;
         const response = await fetch(url);
         const data = await response.json();
         
@@ -767,14 +237,15 @@ async function login() {
             
             saveToStorage();
             showMainApp();
-            showToast(`✅ Welcome, ${state.teacherName}`);
+            showToast('✅ Welcome, ' + state.teacherName);
             startScanner();
         } else {
             showToast('❌ ' + (data.message || 'Login failed'));
         }
     } catch (error) {
         hideLoading();
-        showToast('❌ Connection error. Try again.');
+        console.error('Login error:', error);
+        showToast('❌ Connection error. Check internet.');
     }
 }
 
@@ -783,8 +254,8 @@ function showMainApp() {
     document.getElementById('mainApp').style.display = 'block';
     document.getElementById('teacherName').textContent = state.teacherName || '—';
     document.getElementById('teacherDept').textContent = state.teacherDept || '—';
+    document.getElementById('infoCard').style.display = 'block';
     renderHistory();
-    renderPending();
 }
 
 function logout() {
@@ -793,6 +264,7 @@ function logout() {
     state.teacherName = null;
     state.teacherDept = null;
     localStorage.removeItem(CONFIG.LOGIN_KEY);
+    localStorage.removeItem(CONFIG.STORAGE_KEY);
     document.getElementById('mainApp').style.display = 'none';
     document.getElementById('loginSection').style.display = 'block';
     document.getElementById('teacherIdInput').value = '';
@@ -801,26 +273,8 @@ function logout() {
 }
 
 // ============================================================
-// RENDER
+// HISTORY
 // ============================================================
-function renderPending() {
-    const section = document.getElementById('pendingList');
-    const items = document.getElementById('pendingItems');
-    
-    if (state.pendingScans.length === 0) {
-        section.style.display = 'none';
-        return;
-    }
-    
-    section.style.display = 'block';
-    items.innerHTML = state.pendingScans.map((scan, i) => `
-        <div class="pending-item">
-            <span>${scan.action === 'checkin' ? '✅ IN' : '🚪 OUT'}</span>
-            <span>${new Date(scan.timestamp).toLocaleTimeString()}</span>
-        </div>
-    `).join('');
-}
-
 function renderHistory() {
     const section = document.getElementById('historySection');
     const list = document.getElementById('historyList');
@@ -867,7 +321,6 @@ async function startScanner() {
         
     } catch (error) {
         showToast('❌ Camera access denied');
-        console.error('Camera error:', error);
     }
 }
 
@@ -885,7 +338,7 @@ function scanQR(video) {
     
     if (code && code.data) {
         stopScanner();
-        processScan(code.data);
+        processScan();
         return;
     }
     
@@ -917,123 +370,48 @@ function toggleManual() {
 }
 
 function simulateScan() {
-    processScan('school-qr');
+    processScan();
 }
 
 // ============================================================
-// PROCESS SCAN (Main Logic)
+// PROCESS SCAN
 // ============================================================
-async function processScan(qrData) {
+async function processScan() {
     if (!state.teacherId) {
         showToast('❌ Please login first');
         return;
     }
     
-    // Prevent rapid re-scans
     if (state.lastScanTime && Date.now() - state.lastScanTime < 5000) {
-        showToast('⏳ Please wait 5 seconds between scans');
+        showToast('⏳ Please wait 5 seconds');
         return;
     }
     state.lastScanTime = Date.now();
     
-    // Show loading
-    showLoading('Verifying location...');
+    showLoading('Sending to server...');
     
-    // Update status
     document.getElementById('statusCard').className = 'status-card info';
-    document.getElementById('statusEmoji').textContent = '📍';
-    document.getElementById('statusText').textContent = 'Verifying...';
-    document.getElementById('statusSub').textContent = 'Checking WiFi & GPS';
+    document.getElementById('statusEmoji').textContent = '⏳';
+    document.getElementById('statusText').textContent = 'Processing...';
+    document.getElementById('statusSub').textContent = 'Please wait';
     
-    // === VERIFY PRESENCE ===
-    const verification = await verifyPresence();
-    state.lastVerification = verification;
-    updateVerificationUI(verification);
-    
-    hideLoading();
-    
-    // === DECISION ===
-    if (!verification.verified) {
-        // Not verified - submit for admin review
-        document.getElementById('statusCard').className = 'status-card warning';
-        document.getElementById('statusEmoji').textContent = '⚠️';
-        document.getElementById('statusText').textContent = 'Verification Failed';
-        
-        let reason = 'Could not verify you are at school';
-        if (verification.distance) {
-            reason = `You are ${verification.distance}m from school`;
-        }
-        document.getElementById('statusSub').textContent = reason;
-        
-        // Add to review queue
-        addToReviewQueue({
-            teacherId: state.teacherId,
-            teacherName: state.teacherName,
-            timestamp: new Date().toISOString(),
-            reason: reason,
-            verification: verification
-        });
-        
-        showToast('⚠️ Scan flagged for admin review', 4000);
-        setTimeout(() => startScanner(), 3000);
-        return;
-    }
-    
-    // === VERIFIED - Process scan ===
-    showToast(`✅ Verified via ${verification.method}`, 1500);
-    
-    const scan = {
-        teacherId: state.teacherId,
-        teacherName: state.teacherName,
-        timestamp: new Date().toISOString(),
-        verification: {
-            method: verification.method,
-            wifi: verification.wifi?.ssid,
-            gps: verification.gps,
-            distance: verification.distance,
-            deviceId: verification.device
-        }
-    };
-    
-    // If offline, save locally
-    if (!navigator.onLine) {
-        state.pendingScans.push(scan);
-        saveToStorage();
-        renderPending();
-        updateConnectionStatus();
-        
-        document.getElementById('statusCard').className = 'status-card success';
-        document.getElementById('statusEmoji').textContent = '✅';
-        document.getElementById('statusText').textContent = 'Saved Offline';
-        document.getElementById('statusSub').textContent = 'Will sync when online';
-        
-        showToast('✅ Verified & saved offline', 3000);
-        addHistory('✅ Saved offline', new Date().toLocaleTimeString());
-        
-        setTimeout(() => startScanner(), 2000);
-        return;
-    }
-    
-    // Online - send to server
     try {
-        showLoading('Sending to server...');
-        const response = await fetch(`${CONFIG.API_URL}?action=scan&teacherId=${state.teacherId}&pin=1234&deviceId=${verification.device}`, {
-            method: 'POST',
-            body: JSON.stringify(scan)
-        });
+        const url = CONFIG.API_URL + '?action=scan&teacherId=' + state.teacherId + '&pin=1234';
+        const response = await fetch(url, { method: 'POST' });
         const data = await response.json();
-        hideLoading();
         
+        hideLoading();
         handleServerResponse(data);
         
     } catch (error) {
-        // Network failed - save offline
-        state.pendingScans.push(scan);
-        saveToStorage();
-        renderPending();
-        updateConnectionStatus();
-        showToast('⏳ Network error. Saved offline.', 4000);
-        setTimeout(() => startScanner(), 2000);
+        hideLoading();
+        console.error('Scan error:', error);
+        document.getElementById('statusCard').className = 'status-card error';
+        document.getElementById('statusEmoji').textContent = '❌';
+        document.getElementById('statusText').textContent = 'Connection Error';
+        document.getElementById('statusSub').textContent = 'Check your internet';
+        showToast('❌ Connection error');
+        setTimeout(() => startScanner(), 3000);
     }
 }
 
@@ -1047,8 +425,8 @@ function handleServerResponse(data) {
             document.getElementById('statusEmoji').textContent = '✅';
             document.getElementById('statusText').textContent = 'Checked IN!';
             document.getElementById('statusSub').textContent = data.time;
-            addHistory(`✅ Checked IN`, data.time);
-            showToast(`✅ Checked IN at ${data.time}`);
+            addHistory('✅ Checked IN', data.time);
+            showToast('✅ Checked IN at ' + data.time);
             document.getElementById('teacherStatus').innerHTML = 
                 '<span class="badge badge-success">✅ Checked In</span>';
         } else if (data.action === 'checked_out') {
@@ -1056,8 +434,8 @@ function handleServerResponse(data) {
             document.getElementById('statusEmoji').textContent = '🚪';
             document.getElementById('statusText').textContent = 'Checked OUT!';
             document.getElementById('statusSub').textContent = data.time;
-            addHistory(`🚪 Checked OUT`, data.time);
-            showToast(`🚪 Checked OUT at ${data.time}`);
+            addHistory('🚪 Checked OUT', data.time);
+            showToast('🚪 Checked OUT at ' + data.time);
             document.getElementById('teacherStatus').innerHTML = 
                 '<span class="badge badge-info">🚪 Departed</span>';
         }
@@ -1073,86 +451,11 @@ function handleServerResponse(data) {
         showToast(data.message || 'Notice', 4000);
     }
     
-    setTimeout(() => startScanner(), 2500);
-}
-
-// ============================================================
-// REVIEW QUEUE (for unverified scans)
-// ============================================================
-function addToReviewQueue(item) {
-    state.reviewQueue.push(item);
-    localStorage.setItem(CONFIG.REVIEW_KEY, JSON.stringify(state.reviewQueue));
-    saveToStorage();
-    
-    // Try to sync review queue if online
-    if (navigator.onLine) {
-        syncReviewQueue();
-    }
-}
-
-async function syncReviewQueue() {
-    if (state.reviewQueue.length === 0) return;
-    
-    try {
-        await fetch(`${CONFIG.API_URL}?action=submitReview`, {
-            method: 'POST',
-            body: JSON.stringify(state.reviewQueue)
-        });
-        state.reviewQueue = [];
-        localStorage.removeItem(CONFIG.REVIEW_KEY);
-    } catch (e) {
-        console.log('Review queue sync failed');
-    }
-}
-
-// ============================================================
-// SYNC PENDING SCANS
-// ============================================================
-async function syncPending() {
-    if (state.pendingScans.length === 0) {
-        showToast('✅ Nothing to sync');
-        return;
-    }
-    
-    if (!navigator.onLine) {
-        showToast('⏳ Still offline. Try again later.');
-        return;
-    }
-    
-    showToast(`📤 Syncing ${state.pendingScans.length} scan(s)...`);
-    
-    const successful = [];
-    
-    for (const scan of state.pendingScans) {
-        try {
-            const url = `${CONFIG.API_URL}?action=scan&teacherId=${scan.teacherId}&pin=1234&timestamp=${scan.timestamp}`;
-            const response = await fetch(url, {
-                method: 'POST',
-                body: JSON.stringify(scan)
-            });
-            const data = await response.json();
-            
-            if (data.success || data.action === 'already_done') {
-                successful.push(scan);
-                handleServerResponse(data);
-            }
-        } catch (error) {
-            console.log('Sync failed for scan:', scan);
-        }
-    }
-    
-    state.pendingScans = state.pendingScans.filter(s => !successful.includes(s));
-    saveToStorage();
-    renderPending();
-    updateConnectionStatus();
-    
-    if (successful.length > 0) {
-        showToast(`✅ Synced ${successful.length} scan(s)`);
-    }
+    setTimeout(() => startScanner(), 3000);
 }
 
 function manualSync() {
-    syncPending();
+    showToast('✅ Synced');
 }
 
 // ============================================================
@@ -1160,32 +463,20 @@ function manualSync() {
 // ============================================================
 window.addEventListener('load', () => {
     loadFromStorage();
-    updateConnectionStatus();
     
-    // Auto-fill saved credentials
     const saved = JSON.parse(localStorage.getItem(CONFIG.LOGIN_KEY) || '{}');
     if (saved.teacherId) {
         document.getElementById('teacherIdInput').value = saved.teacherId;
-    }
-    
-    // Auto-login if saved
-    if (state.teacherId && state.teacherName) {
+        state.teacherId = saved.teacherId;
+        state.teacherName = saved.name;
+        state.teacherDept = saved.department;
         showMainApp();
         startScanner();
     }
     
-    // Periodic sync
-    setInterval(() => {
-        if (navigator.onLine && state.pendingScans.length > 0) {
-            syncPending();
-        }
-    }, 30000);
-    
-    console.log('📱 Offline-first QR Attendance loaded');
-    console.log('📱 Device ID:', getDeviceId());
+    console.log('📱 Attendance App loaded');
 });
 
-// Cleanup on page unload
 window.addEventListener('beforeunload', () => {
     stopScanner();
     saveToStorage();
